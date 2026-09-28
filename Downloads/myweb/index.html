@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac Gabriel | My CS Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="top">
+
+    <header class="hero">
+        <p class="tagline">MY DIGITAL JOURNEY</p>
+        <h1>Mac Gabriel</h1>
+        <p class="subtitle">Computer Science Student <span class="divider">|</span> Future Web Developer</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="#about">About Me</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#learning">Learning Plan</a>
+        <a href="#photos">Photos</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Mac Gabriel, a passionate Computer Science student on a journey to become a skilled web developer. I love turning ideas into interactive digital experiences and am constantly learning new technologies. This page is my digital space to share
+                my progress, hobbies, and learning milestones.
+            </p>
+        </section>
+
+        <section id="hobbies" class="content-section">
+            <h2>My Hobbies</h2>
+            <ul class="hobby-list">
+                <li>⚽ Playing Football</li>
+                <li>💻 Coding</li>
+                <li>🎮 Gaming</li>
+            </ul>
+        </section>
+
+        <section id="learning" class="content-section">
+            <h2>My Learning Plan</h2>
+            <p>My plan is to improve my web development skills step by step.</p>
+
+            <ol class="learning-list">
+                <li>Strengthen my HTML structure and semantic markup.</li>
+                <li>Learn CSS layouts and responsive design.</li>
+                <li>Build interactive pages using JavaScript.</li>
+                <li>Publish projects using GitHub.</li>
+            </ol>
+
+            <div class="table-wrap">
+                <table>
+                    <caption>My Weekly Web Learning Plan</caption>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Topic</th>
+                            <th>Practice Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>HTML</td>
+                            <td>Build a semantic page</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>CSS</td>
+                            <td>Practice layouts</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>JavaScript</td>
+                            <td>Create a simple interaction</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="photos" class="content-section">
+            <h2>My Photos</h2>
+            <div class="gallery">
+                <figure>
+                    <a href="images/photo1.jpg" target="_blank">
+                        <img src="images/photo1.jpg" alt="Description of photo one">
+                    </a>
+                    <figcaption>My First photo caption.</figcaption>
+                </figure>
+                <figure>
+                    <a href="images/photo2.jpg" target="_blank">
+                        <img src="images/photo2.jpg" alt="Description of photo two">
+                    </a>
+                    <figcaption>My Second photo caption.</figcaption>
+                </figure>
+                <figure>
+                    <a href="images/photo3.jpg" target="_blank">
+                        <img src="images/photo3.jpg" alt="Description of photo three">
+                    </a>
+                    <figcaption>My Third photo caption.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="media" class="content-section">
+            <h2>My Media</h2>
+
+            <h3>My Introduction</h3>
+            <video controls width="600">
+                <source src="videos/intro.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+            <p>In this video, I introduce myself, explain my programme, and discuss the web skill I hope to develop.</p>
+
+            <h3>My Voice Clip</h3>
+            <audio controls>
+                <source src="videos/voice.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+            <p>This is my voice clip.</p>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2>Contact Me</h2>
+
+            <form action="#" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="topic">Topic</label>
+                <input type="text" id="topic" name="topic" placeholder="What is this about?">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p class="form-note">This form is a browser demonstration and does not send information to a server.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mac Gabriel</p>
+        <p>ICT251 Web Technologies</p>
+        <a href="#top" class="back-top">↑ Back to Top</a>
+    </footer>
+
+    <script>
+        // Highlight the nav link of the section currently in view
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 120) {
+                    current = sec.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
