@@ -17,15 +17,23 @@
         <p class="tagline">MY DIGITAL JOURNEY</p>
         <h1>Mac Gabriel</h1>
         <p class="subtitle">Computer Science Student <span class="divider">|</span> Future Web Developer</p>
+        <a href="#projects" class="cta-button">View My Projects</a>
     </header>
 
     <nav class="main-nav">
         <a href="#about">About Me</a>
         <a href="#hobbies">Hobbies</a>
         <a href="#learning">Learning Plan</a>
+        <a href="#projects">Projects</a>
         <a href="#photos">Photos</a>
         <a href="#media">Media</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" type="button" aria-label="Switch to light theme">🌙 Theme</button>
+
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        ☰ Menu
+        </button>
+
     </nav>
 
     <main>
@@ -89,27 +97,44 @@
             </div>
         </section>
 
+        <section id="projects" class="content-section">
+    <h2>My Projects & Skills</h2>
+    <p>Here are three things I have learned and built so far:</p>
+
+    <div class="projects-grid">
+        <article class="project-card">
+            <h3>Personal Portfolio Website</h3>
+            <p>Built a multi-section responsive portfolio using semantic HTML5, external CSS, and Flexbox/Grid layout.</p>
+            <button class="toggle-details" type="button">Show Details</button>
+            <p class="project-details" hidden>I learned how to structure pages with header, nav, main, section and footer; how to link external stylesheets; and how to make content readable at narrow widths.</p>
+        </article>
+
+        <article class="project-card">
+            <h3>JavaScript Form Validation</h3>
+            <p>Created a contact form with client-side validation using JavaScript and DOM manipulation.</p>
+            <button class="toggle-details" type="button">Show Details</button>
+            <p class="project-details" hidden>I learned event.preventDefault(), regular expressions for email checking, trimming whitespace, and updating the DOM with textContent.</p>
+        </article>
+
+        <article class="project-card">
+            <h3>Responsive Media Gallery</h3>
+            <p>Designed a photo gallery and media section that scales cleanly on phones and desktops.</p>
+            <button class="toggle-details" type="button">Show Details</button>
+            <p class="project-details" hidden>I learned CSS Grid auto-fit, object-fit for images, and the viewport meta tag for mobile responsiveness.</p>
+        </article>
+    </div>
+</section>
+
         <section id="photos" class="content-section">
             <h2>My Photos</h2>
-            <div class="gallery">
-                <figure>
-                    <a href="images/photo1.jpg" target="_blank">
-                        <img src="images/photo1.jpg" alt="Description of photo one">
-                    </a>
-                    <figcaption>My First photo caption.</figcaption>
-                </figure>
-                <figure>
-                    <a href="images/photo2.jpg" target="_blank">
-                        <img src="images/photo2.jpg" alt="Description of photo two">
-                    </a>
-                    <figcaption>My Second photo caption.</figcaption>
-                </figure>
-                <figure>
-                    <a href="images/photo3.jpg" target="_blank">
-                        <img src="images/photo3.jpg" alt="Description of photo three">
-                    </a>
-                    <figcaption>My Third photo caption.</figcaption>
-                </figure>
+           
+            <div class="gallery-viewer">
+                <img id="viewer-image" src="images/photo1.jpg" alt="Description of photo one">
+                <p id="viewer-caption">My First photo caption.</p>
+                <div class="viewer-controls">
+                    <button id="prev-photo" type="button">← Previous</button>
+                    <button id="next-photo" type="button">Next →</button>
+                </div>
             </div>
         </section>
 
@@ -134,21 +159,28 @@
         <section id="contact" class="content-section">
             <h2>Contact Me</h2>
 
-            <form action="#" method="post">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <form id="contact-form" novalidate>
+    <p class="form-note"><strong>Browser demonstration only — no message is sent.</strong></p>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    <label for="name">Name <span aria-hidden="true">*</span></label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
+    <p class="field-error" id="name-error" role="alert"></p>
 
-                <label for="topic">Topic</label>
-                <input type="text" id="topic" name="topic" placeholder="What is this about?">
+    <label for="email">Email <span aria-hidden="true">*</span></label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    <p class="field-error" id="email-error" role="alert"></p>
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+    <label for="topic">Topic</label>
+    <input type="text" id="topic" name="topic" placeholder="What is this about?">
 
-                <button type="submit">Send Message</button>
-            </form>
+    <label for="message">Message <span aria-hidden="true">*</span></label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+    <p class="field-error" id="message-error" role="alert"></p>
+
+    <button type="submit">Validate & Preview</button>
+</form>
+
+<div id="form-preview" class="form-preview" hidden aria-live="polite"></div>
 
             <p class="form-note">This form is a browser demonstration and does not send information to a server.</p>
         </section>
@@ -157,28 +189,10 @@
 
     <footer>
         <p>&copy; 2026 Mac Gabriel</p>
-        <p>ICT251 Web Technologies</p>
+        <p><a href="https://github.com/chilandogabriel21-glitch/My-Website" target="_blank" rel="noopener">View source on GitHub</a></p>
         <a href="#top" class="back-top">↑ Back to Top</a>
     </footer>
-
-    <script>
-        // Highlight the nav link of the section currently in view
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.main-nav a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(sec => {
-                if (window.scrollY >= sec.offsetTop - 120) {
-                    current = sec.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-            });
-        });
-    </script>
-
+<script src="js/script.js" defer></script>
 </body>
 
 </html>

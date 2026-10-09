@@ -1,6 +1,4 @@
-/* =========================================================
-   GLOBAL
-   ========================================================= */
+/* GLOBAL*/
 
 * {
     margin: 0;
@@ -68,9 +66,7 @@ footer {
 }
 
 
-/* =========================================================
-   HERO / HEADER
-   ========================================================= */
+/*HERO / HEADER*/
 
 .hero {
     text-align: center;
@@ -112,9 +108,7 @@ footer {
 }
 
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+/*NAVIGATION*/
 
 .main-nav {
     position: sticky;
@@ -126,7 +120,7 @@ footer {
     gap: 8px;
     padding: 14px 20px;
     margin: 0 auto 50px;
-    max-width: 1000px;
+    max-width: 1200px;
     background: rgba(11, 15, 25, 0.75);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -135,12 +129,21 @@ footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* Menu toggle hidden by default — only shows on narrow screens */
+.nav-toggle {
+    display: none;
+    margin: 0 auto 12px;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
 .main-nav a {
     color: var(--text-soft);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
-    padding: 8px 16px;
+    padding: 8px 12px;
     border-radius: 999px;
     transition: all 0.25s ease;
 }
@@ -157,9 +160,7 @@ footer {
 }
 
 
-/* =========================================================
-   SECTIONS
-   ========================================================= */
+/*SECTIONS*/
 
 main {
     max-width: 950px;
@@ -218,9 +219,7 @@ main {
 }
 
 
-/* =========================================================
-   LISTS
-   ========================================================= */
+/* LISTS*/
 
 .hobby-list,
 .learning-list {
@@ -275,9 +274,7 @@ main {
 }
 
 
-/* =========================================================
-   TABLE
-   ========================================================= */
+/*TABLE*/
 
 .table-wrap {
     overflow-x: auto;
@@ -337,9 +334,7 @@ tbody tr:hover {
 }
 
 
-/* =========================================================
-   GALLERY
-   ========================================================= */
+/*GALLERY*/
 
 .gallery {
     display: grid;
@@ -376,9 +371,7 @@ tbody tr:hover {
 }
 
 
-/* =========================================================
-   MEDIA
-   ========================================================= */
+/*MEDIA*/
 
 video,
 audio {
@@ -394,9 +387,7 @@ audio {
 }
 
 
-/* =========================================================
-   FORM
-   ========================================================= */
+/*FORM*/
 
 form {
     display: flex;
@@ -477,9 +468,7 @@ button:active {
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/*FOOTER*/
 
 footer {
     text-align: center;
@@ -516,9 +505,7 @@ footer p {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/*RESPONSIVE*/
 
 @media (max-width: 640px) {
     .content-section {
@@ -539,9 +526,7 @@ footer p {
 }
 
 
-/* =========================
-   PHOTO GALLERY
-   ========================= */
+/* PHOTO GALLERY*/
 
 .photo-gallery {
     display: grid;
@@ -575,9 +560,7 @@ footer p {
 }
 
 
-/* =========================
-   VIDEO
-   ========================= */
+/*VIDEO*/
 
 #media video {
     width: 100%;
@@ -587,4 +570,183 @@ footer p {
     margin: 20px auto;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+    /*THEME TOGGLE BUTTON*/
+#theme-toggle,
+.theme-toggle {
+  background-color: #38bdf8;
+  color: #0a1128;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+}
+
+#theme-toggle:hover,
+.theme-toggle:hover {
+  opacity: 0.85;
+}
+
+footer a[href*="github"] {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+footer a[href*="github"]:hover,
+footer a[href*="github"]:focus-visible {
+    background: rgba(79, 157, 255, 0.12);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/*LIGHT THEME*/
+
+body.light-theme {
+  background: linear-gradient(180deg, #f5f0e8 0%, #ede8e0 45%, #f0ece4 100%);
+  color: #1a1a2e;
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3 {
+  color: #8f3f0a;
+}
+
+
+/*DARK THEME*/
+
+body.dark-theme {
+  background: 
+    radial-gradient(1400px 700px at 50% -20%, rgba(255, 150, 70, 0.28), transparent 65%),
+    radial-gradient(1000px 600px at 8% 0%, rgba(255, 130, 50, 0.30), transparent 60%),
+    radial-gradient(1000px 600px at 100% 10%, rgba(140, 140, 150, 0.20), transparent 60%),
+    linear-gradient(180deg, #1c1d1f 0%, #232427 45%, #161719 100%);
+  color: #f5f2e8;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+  color: #38bdf8;
+}
+
+/*LIGHT THEME — VARIABLE OVERRIDES FOR READABILITY*/
+
+body.light-theme {
+  /* Background + base text color */
+  background: linear-gradient(180deg, #f5f0e8 0%, #ede8e0 45%, #f0ece4 100%);
+  color: #1a1a2e;
+
+  /* Override the CSS variables so ALL text becomes readable */
+  --text-main:  #1a1a2e;   /* dark navy — main text on light bg */
+  --text-soft:  #3a3a5a;   /* medium slate — secondary text */
+  --text-muted: #6a6a8a;   /* muted grey-blue — placeholders, captions */
+
+  /* Card backgrounds need to darken slightly so text pops */
+  --bg-card:        rgba(0, 0, 0, 0.035);
+  --bg-card-hover:  rgba(0, 0, 0, 0.06);
+  --border-soft:    rgba(0, 0, 0, 0.10);
+}
+
+/*LIGHT THEME — DIRECT TEXT OVERRIDES*/
+
+body.light-theme h1 {
+  background: linear-gradient(135deg, #1a1a2e 0%, #3a3a5a 60%, #8f3f0a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-theme h2,
+body.light-theme h3 {
+  color: #1a1a2e;
+}
+
+body.light-theme .main-nav a {
+  color: #3a3a5a;
+}
+
+body.light-theme .main-nav a:hover {
+  color: #1a1a2e;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .main-nav {
+  background: rgba(245, 240, 232, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+body.light-theme thead th {
+  background: rgba(0, 0, 0, 0.04);
+  color: #1a1a2e;
+}
+
+body.light-theme tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.light-theme tbody tr:hover {
+  background: rgba(79, 157, 255, 0.10);
+}
+
+body.light-theme .hobby-list li,
+body.light-theme .learning-list li {
+  background: rgba(255, 255, 255, 0.5);
+  color: #1a1a2e;
+}
+
+body.light-theme .project-card {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .project-card h3 {
+  color: #1a1a2e;
+}
+
+body.light-theme .project-card p {
+  color: #3a3a5a;
+}
+
+body.light-theme input,
+body.light-theme textarea {
+  background: rgba(255, 255, 255, 0.7);
+  color: #1a1a2e;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+  color: #8a8aaa;
+}
+
+body.light-theme footer {
+  color: #6a6a8a;
+}
+
+body.light-theme .back-top {
+  color: #8f3f0a;
+  border-color: rgba(143, 63, 10, 0.4);
+}
+
+body.light-theme .back-top:hover {
+  background: rgba(143, 63, 10, 0.10);
+  color: #1a1a2e;
+}
+
+/*FINAL OVERRIDE — MUST BE THE VERY LAST RULE*/
+
+body.light-theme,
+body.dark-theme {
+  background-attachment: scroll;
+  transition: background 0.4s ease, color 0.3s ease;
 }
